@@ -40,6 +40,8 @@
 	"displayName": "Scene Tree View",
 	"version": "0.1.7",
 	"author": "DigitOtter",
+	"website": "https://github.com/DigitOtter",
+	"email": "redacted@example.com",
 	"uuids": {
 		"windowsApp": "f36c462e-387f-445d-bdc4-c1e29402a080"
 	}
