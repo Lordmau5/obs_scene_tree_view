@@ -42,8 +42,11 @@ target_sources(
 	PRIVATE
 	
 	src/plugin-macros.generated.h
+	src/obs_scene_tree_view.h
 	src/obs_scene_tree_view.cpp
+	src/stv_item_model.h
 	src/stv_item_model.cpp
+	src/stv_item_view.h
 	src/stv_item_view.cpp
 )
 

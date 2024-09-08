@@ -172,7 +172,7 @@
   <customwidget>
    <class>StvItemView</class>
    <extends>QTreeView</extends>
-   <header>obs_scene_tree_view/stv_item_view.h</header>
+   <header>stv_item_view.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

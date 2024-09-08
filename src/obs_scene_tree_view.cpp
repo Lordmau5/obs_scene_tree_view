@@ -1,6 +1,4 @@
-#include "obs_scene_tree_view/obs_scene_tree_view.h"
-
-#include "obs_scene_tree_view/version.h"
+#include "obs_scene_tree_view.h"
 
 #include <QLineEdit>
 #include <QAction>
@@ -13,11 +11,12 @@
 
 #include <obs-module.h>
 #include <util/platform.h>
+#include "plugin-macros.generated.h"
 
 
-OBS_DECLARE_MODULE();
-OBS_MODULE_AUTHOR("DigitOtter");
-OBS_MODULE_USE_DEFAULT_LOCALE(PROJECT_DATA_FOLDER, "en-US");
+OBS_DECLARE_MODULE()
+OBS_MODULE_AUTHOR("DigitOtter")
+OBS_MODULE_USE_DEFAULT_LOCALE(PROJECT_DATA_FOLDER, "en-US")
 
 MODULE_EXPORT const char *obs_module_description(void)
 {
@@ -31,7 +30,7 @@ MODULE_EXPORT const char *obs_module_name(void)
 
 bool obs_module_load()
 {
-	blog(LOG_INFO, "[%s] loaded version %s", obs_module_name(), PROJECT_VERSION);
+	blog(LOG_INFO, "[%s] loaded version %s", obs_module_name(), PLUGIN_VERSION);
 
 	BPtr<char> stv_config_path = obs_module_config_path("");
 	if(!os_mkdir(stv_config_path))
@@ -39,7 +38,8 @@ bool obs_module_load()
 
 	QMainWindow *main_window = reinterpret_cast<QMainWindow*>(obs_frontend_get_main_window());
 	obs_frontend_push_ui_translation(obs_module_get_string);
-	obs_frontend_add_dock(new ObsSceneTreeView(main_window));
+	obs_frontend_add_dock_by_id("stv_dock",
+				    "Scene Tree View", new ObsSceneTreeView(main_window));
 	obs_frontend_pop_ui_translation();
 
 	return true;

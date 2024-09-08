@@ -3,7 +3,7 @@
 
 #include <QtWidgets/QTreeView>
 
-#include "obs_scene_tree_view/stv_item_model.h"
+#include "stv_item_model.h"
 
 class StvItemView
         : public QTreeView

@@ -1,4 +1,4 @@
-#include "obs_scene_tree_view/stv_item_view.h"
+#include "stv_item_view.h"
 
 #include <QMouseEvent>
 #include <util/config-file.h>
